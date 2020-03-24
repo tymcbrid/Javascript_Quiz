@@ -12,7 +12,7 @@ rightAnswer.addEventListener("click", function(event) {
     event.preventDefault();
     score++;
     console.log("Score is " + score);
-    var newAnswer = "You were right!";
+    var newAnswer = "Correct!";
     localStorage.setItem("lastAnswer", newAnswer);
     localStorage.setItem("score", score);
 
@@ -21,7 +21,7 @@ rightAnswer.addEventListener("click", function(event) {
 wrongAnswer.addEventListener("click", function(event) {
     event.preventDefault();
     console.log("Score is " + score);
-    var newAnswer = "You were wrong!"
+    var newAnswer = "Wrong answer!"
     localStorage.setItem("lastAnswer", newAnswer);
     localStorage.setItem("score", score);
 
