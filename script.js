@@ -21,32 +21,86 @@ var questions = [
         ]
     },
     {
-        question: 'Fake',
-        answers: [
-            {text: '1', correct: false},
-            {text: '2', correct: true},
-            {text: '3', correct: false},
-            {text: '4', correct: false}
-            ]
-        },
+    question: 'Inside which HTML element do we put the JavaScript?',
+    answers: [
+        {text: '<script>', correct: true},
+        {text: '<javascript>', correct: false},
+        {text: '<js>', correct: false},
+        {text: '<scripting>', correct: false}
+        ]
+    },
     {
-        question: 'What is JavaScript?',
-        answers: [
-            {text: '1. Programming Language', correct: true},
-            {text: '2. Type of coffee', correct: false},
-            {text: '3. Famous poem by Edgar Allen Poe', correct: false},
-            {text: '4. Social media platform', correct: false}
-            ]
-        },
+    question: 'What is JavaScript?',
+    answers: [
+        {text: '1. Programming Language', correct: true},
+        {text: '2. Type of coffee', correct: false},
+        {text: '3. Famous poem by Edgar Allen Poe', correct: false},
+        {text: '4. Social media platform', correct: false}
+        ]
+    },
     {
-        question: 'Fake2',
-        answers: [
-            {text: '1', correct: false},
-            {text: '2', correct: true},
-            {text: '3', correct: false},
-            {text: '4', correct: false}
-            ]
-        },
+    question: 'What is the correct syntax for referring to an external script called "xxx.js"?',
+    answers: [
+        {text: '<script "xxx.js">', correct: false},
+        {text: '<script href="xxx.js">', correct: false},
+        {text: '<script src="xxx.js">', correct: true},
+        {text: '<script name="xxx.js">', correct: false}
+        ]
+    },
+    {
+    question: 'How do you write "Hello World" in an alert box?',
+    answers: [
+        {text: 'Displaytext = "Hello World"', correct: false},
+        {text: 'alert("Hello World")', correct: true},
+        {text: 'alertText("Hello World")', correct: false},
+        {text: 'alertText = ("Hello World")', correct: false}
+        ]
+    },
+        {
+    question: 'How do you create a function in JavaScript?',
+    answers: [
+        {text: 'function.Create = myFunction()', correct: false},
+        {text: 'function = myFunction()', correct: true},
+        {text: 'function: myFunction()', correct: false},
+        {text: 'New.function = myFunction()', correct: false}
+        ]
+    },
+    {
+    question: 'How do you call a function named "myFunction"?',
+    answers: [
+        {text: 'myFunction.Call', correct: false},
+        {text: 'myFunction().Execute', correct: false},
+        {text: 'myFunction.Execute', correct: false},
+        {text: 'myFunction()', correct: true}
+        ]
+    },
+    {
+    question: 'How do you annotate "not equal"?',
+    answers: [
+        {text: '!=', correct: true},
+        {text: '?=', correct: false},
+        {text: '===', correct: false},
+        {text: 'X=', correct: false}
+        ]
+    },
+        {
+    question: 'How do you add a one line comment in JS?',
+    answers: [
+        {text: '/* */', correct: false},
+        {text: '<!-- -->', correct: false},
+        {text: '//', correct: true},
+        {text: '/', correct: false}
+        ]
+    },
+    {
+    question: 'How do you write an array in JS?',
+    answers: [
+        {text: 'var myArray = {1, 2, 3}', correct: false},
+        {text: 'var myArray = {"1", "2", "3"}', correct: false},
+        {text: 'myArray = {"1", "2", "3"}', correct: false},
+        {text: 'var myArray = ["1", "2", "3"]', correct: true}
+        ]
+    },
 ]
 
 console.log(questions.length);
