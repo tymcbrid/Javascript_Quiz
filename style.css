@@ -16,7 +16,7 @@
     height: 100vh;
     justify-content: center;
     align-items: center;
-    background-color: hsl(var(--hue), 100%, 20%);
+    background-color: #4b2e83;
   }
   body.correct {
     --hue: var(--hue-correct);
@@ -39,16 +39,20 @@
     margin: 20px 0;
   }
   .btn {
-    --hue: var(--hue-neutral);
+    /* --hue: var(--hue-neutral);
     border: 1px solid hsl(var(--hue), 100%, 30%);
     background-color: hsl(var(--hue), 100%, 50%);
     border-radius: 5px;
     padding: 5px 10px;
     color: white;
-    outline: none;
+    outline: none; */
+    background-color: #4b2e83;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
   }
   .btn:hover {
-    border-color: black;
+    background-color: blueviolet;
   }
   .btn.correct {
     --hue: var(--hue-correct);
@@ -70,3 +74,29 @@
   .hide {
     display: none;
   }
+
+  .rightOrwrong1 {
+    -moz-animation: cssAnimation 0s ease-in 1.5s forwards;
+    /* Firefox */
+    -webkit-animation: cssAnimation 0s ease-in 1.5s forwards;
+    /* Safari and Chrome */
+    -o-animation: cssAnimation 0s ease-in 1.5s forwards;
+    /* Opera */
+    animation: cssAnimation 0s ease-in 1.5s forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+@keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;
+        overflow:hidden;
+    }
+}
+@-webkit-keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;
+        visibility:hidden;
+    }
+}
