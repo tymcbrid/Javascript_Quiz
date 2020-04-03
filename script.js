@@ -23,10 +23,10 @@ var questions = [
     {
     question: 'Inside which HTML element do we put the JavaScript?',
     answers: [
-        {text: '<script>', correct: true},
-        {text: '<javascript>', correct: false},
-        {text: '<js>', correct: false},
-        {text: '<scripting>', correct: false}
+        {text: '1. <script>', correct: true},
+        {text: '2. <javascript>', correct: false},
+        {text: '3. <js>', correct: false},
+        {text: '4. <scripting>', correct: false}
         ]
     },
     {
@@ -41,64 +41,64 @@ var questions = [
     {
     question: 'What is the correct syntax for referring to an external script called "xxx.js"?',
     answers: [
-        {text: '<script "xxx.js">', correct: false},
-        {text: '<script href="xxx.js">', correct: false},
-        {text: '<script src="xxx.js">', correct: true},
-        {text: '<script name="xxx.js">', correct: false}
+        {text: '1. <script "xxx.js">', correct: false},
+        {text: '2. <script href="xxx.js">', correct: false},
+        {text: '3. <script src="xxx.js">', correct: true},
+        {text: '4. <script name="xxx.js">', correct: false}
         ]
     },
     {
     question: 'How do you write "Hello World" in an alert box?',
     answers: [
-        {text: 'Displaytext = "Hello World"', correct: false},
-        {text: 'alert("Hello World")', correct: true},
-        {text: 'alertText("Hello World")', correct: false},
-        {text: 'alertText = ("Hello World")', correct: false}
+        {text: '1. Displaytext = "Hello World"', correct: false},
+        {text: '2. alert("Hello World")', correct: true},
+        {text: '3. alertText("Hello World")', correct: false},
+        {text: '4. alertText = ("Hello World")', correct: false}
         ]
     },
         {
     question: 'How do you create a function in JavaScript?',
     answers: [
-        {text: 'function.Create = myFunction()', correct: false},
-        {text: 'function = myFunction()', correct: true},
-        {text: 'function: myFunction()', correct: false},
-        {text: 'New.function = myFunction()', correct: false}
+        {text: '1. function.Create = myFunction()', correct: false},
+        {text: '2. function = myFunction()', correct: true},
+        {text: '3. function: myFunction()', correct: false},
+        {text: '4. New.function = myFunction()', correct: false}
         ]
     },
     {
     question: 'How do you call a function named "myFunction"?',
     answers: [
-        {text: 'myFunction.Call', correct: false},
-        {text: 'myFunction().Execute', correct: false},
-        {text: 'myFunction.Execute', correct: false},
-        {text: 'myFunction()', correct: true}
+        {text: '1. myFunction.Call', correct: false},
+        {text: '2. myFunction().Execute', correct: false},
+        {text: '3. myFunction.Execute', correct: false},
+        {text: '4. myFunction()', correct: true}
         ]
     },
     {
     question: 'How do you annotate "not equal"?',
     answers: [
-        {text: '!=', correct: true},
-        {text: '?=', correct: false},
-        {text: '===', correct: false},
-        {text: 'X=', correct: false}
+        {text: '1. !=', correct: true},
+        {text: '2. ?=', correct: false},
+        {text: '3. ===', correct: false},
+        {text: '4. X=', correct: false}
         ]
     },
         {
     question: 'How do you add a one line comment in JS?',
     answers: [
-        {text: '/* */', correct: false},
-        {text: '<!-- -->', correct: false},
-        {text: '//', correct: true},
-        {text: '/', correct: false}
+        {text: '1. /* */', correct: false},
+        {text: '2. <!-- -->', correct: false},
+        {text: '3. //', correct: true},
+        {text: '4. /', correct: false}
         ]
     },
     {
     question: 'How do you write an array in JS?',
     answers: [
-        {text: 'var myArray = {1, 2, 3}', correct: false},
-        {text: 'var myArray = {"1", "2", "3"}', correct: false},
-        {text: 'myArray = {"1", "2", "3"}', correct: false},
-        {text: 'var myArray = ["1", "2", "3"]', correct: true}
+        {text: '1. var myArray = {1, 2, 3}', correct: false},
+        {text: '2. var myArray = {"1", "2", "3"}', correct: false},
+        {text: '3. myArray = {"1", "2", "3"}', correct: false},
+        {text: '4. var myArray = ["1", "2", "3"]', correct: true}
         ]
     },
 ]
