@@ -10,8 +10,35 @@ var questionSection = document.getElementById("questionSection");
 var introSection = document.getElementById("introSection");
 var timer = document.getElementById("time");
 var outterTimer = document.getElementById("timer");
-// question constants to retrieve later. questions[0].question
-   
+var highscores = document.getElementById("highscore");
+var scoreList = document.getElementById("scoreList");
+var allScores = document.getElementById("allscores");
+
+
+var highScoreMode = false;
+highscores.addEventListener("click", function(){
+   if(highScoreMode == false){
+    container.appendChild(scoreList);
+    container.removeChild(introSection);
+    container.removeChild(questionSection);
+    // var scoreList = document.createElementNS("High Scores", "div")
+    // var scoreHeading = document.createElement("h2")
+    // scoreHeading.textContent = "High Scores"
+    // scoreList.append(scoreHeading);
+    // container.append(scoreList);
+    scoreList.style.visibility = "visible";
+    highScoreMode = true;
+   }
+   else {
+    container.removeChild(scoreList);
+       container.prepend(introSection);
+       container.append(questionSection);
+       scoreList.style.visibility = "hidden";
+       highScoreMode = false;
+   }
+
+})
+
 var secondsLeft = 60;
 timer.textContent = secondsLeft;
 function setTime() {
@@ -32,7 +59,7 @@ function setTime() {
 buttonStart.addEventListener("click", function(){
     // container.prepend(questionSection);
     container.removeChild(introSection);
-    container.append(questionSection)
+    container.append(questionSection);
     questionSection.style.visibility = "visible";
     setTime();
     // questions.length = 0;
@@ -189,6 +216,9 @@ function gameOver() {
         var newInput = document.createElement("input");
         var endButton = document.createElement("button");
         var endTime = timer.textContent;
+        if (secondsLeft == 0){
+            endTime = 0;
+        }
         var zeroTime = document.createElement("h3");
         zeroTime.textContent = 0;
         zeroTime.classList.add("time");
@@ -211,6 +241,22 @@ function gameOver() {
         container.prepend(newDiv);
         // introSection.style.visibility = "visible";
         questionSection.style.visibility = "hidden";
+
+
+        endButton.addEventListener("click", function(){
+           console.log(newInput.value)
+        var newName = "Name: " + newInput.value + "    .................    ";
+        var newScore = "Score: " + endTime;
+        allScores.append(newName);
+        allScores.append(newScore);
+        container.removeChild(newDiv)
+        container.prepend(scoreList);
+        scoreList.style.visibility = "visible";
+        scoreList.style.padding = "100px"
+        scoreList.style.marginTop = "-100px"
+        scoreList.style.marginLeft = "-50px"
+        console.log(newScore);
+        })
     }
 }
 
