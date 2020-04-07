@@ -14,6 +14,12 @@ var highscores = document.getElementById("highscore");
 var scoreList = document.getElementById("scoreList");
 var allScores = document.getElementById("allscores");
 
+// var savedNames = [];
+var savedScores = [];
+var arrayRaw = localStorage.getItem("scores")
+var savedScores = JSON.parse(arrayRaw)
+
+console.log(savedScores);
 
 var highScoreMode = false;
 highscores.addEventListener("click", function(){
@@ -21,13 +27,7 @@ highscores.addEventListener("click", function(){
     container.appendChild(scoreList);
     container.removeChild(introSection);
     container.removeChild(questionSection);
-    // var scoreList = document.createElementNS("High Scores", "div")
-    // var scoreHeading = document.createElement("h2")
-    // scoreHeading.textContent = "High Scores"
-    // scoreList.append(scoreHeading);
-    // container.append(scoreList);
-    scoreList.style.visibility = "visible";
-    highScoreMode = true;
+    highscoreScreen();
    }
    else {
     container.removeChild(scoreList);
@@ -38,6 +38,18 @@ highscores.addEventListener("click", function(){
    }
 
 })
+
+function highscoreScreen(){
+    scoreList.style.visibility = "visible";
+    highScoreMode = true;
+    allScores.innerHTML = "";
+    for(var i = 0; i < savedScores.length; i++){
+        var newScoreListing = document.createElement("p")
+        newScoreListing.classList.add("listing")
+        newScoreListing.textContent = "Name: " + savedScores[i].Name + " ........................ " + "Score: " + savedScores[i].Score;
+        allScores.append(newScoreListing)
+    }
+}
 
 var secondsLeft = 60;
 timer.textContent = secondsLeft;
@@ -245,13 +257,18 @@ function gameOver() {
 
         endButton.addEventListener("click", function(){
            console.log(newInput.value)
-        var newName = "Name: " + newInput.value + "    .................    ";
-        var newScore = "Score: " + endTime;
-        allScores.append(newName);
-        allScores.append(newScore);
+        var newName = newInput.value;
+        var newScore = endTime;
+        let newHighscore = {
+            Name: newName,
+            Score: newScore,
+        }
+        savedScores.push(newHighscore);
+        console.log(savedScores);
+        localStorage.setItem('scores', JSON.stringify(savedScores));
         container.removeChild(newDiv)
         container.prepend(scoreList);
-        scoreList.style.visibility = "visible";
+        highscoreScreen();
         scoreList.style.padding = "100px"
         scoreList.style.marginTop = "-100px"
         scoreList.style.marginLeft = "-50px"
