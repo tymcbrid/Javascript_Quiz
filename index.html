@@ -11,9 +11,18 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+    <div id = "timer">
+        <h3>Time: </h3>
+        <h3 id = "time" class= "time">1</h3>
+    </div>
     <div class="container">
-        <div class="question-container">
-            <div><h4>Points: <span id="point-counter">0</span></h4></div>
+        <div class= "intro" id= "introSection">
+            <h1>Coding Quiz Challenge</h1>
+            <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your time/score by ten seconds.</p>
+            <button id="buttonStart" class="start btn">Start</button>
+        </div>
+        <div class="question-container" id = "questionSection">
+            <div><h4>Correct Answers: <span id="point-counter">0</span></h4></div>
             <div id="question"><h2></h2></div>
             <div id="answers" class="btn-grid">
                 <button id="button1" class="answer btn"></button>

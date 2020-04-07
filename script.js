@@ -3,13 +3,43 @@ var count = localStorage.getItem("count");
 var submitBtn = document.querySelector("#submit-btn");
 var answerButtonElement = document.querySelector('answer-buttons');
 var questionElement = document.querySelector("#question");
-var answerBtn = document.querySelector("#answer-buttons");
 var rightOrwrong = document.querySelector("#rightOrwrong");
+var buttonStart = document.querySelector("#buttonStart");
+var container = document.querySelector(".container");
+var questionSection = document.getElementById("questionSection");
+var introSection = document.getElementById("introSection");
+var timer = document.getElementById("time");
+var outterTimer = document.getElementById("timer");
 // question constants to retrieve later. questions[0].question
    
+var secondsLeft = 60;
+timer.textContent = secondsLeft;
+function setTime() {
+    var timerInterval = setInterval(function() {
+      secondsLeft--;
+      timer.textContent = secondsLeft;
+  
+      if(secondsLeft == 0) {
+        clearInterval(timerInterval);
+        gameOver();
+      }
+  
+    }, 1000);
+  }
 
 
-// use array of arrays like in HW3
+
+buttonStart.addEventListener("click", function(){
+    // container.prepend(questionSection);
+    container.removeChild(introSection);
+    container.append(questionSection)
+    questionSection.style.visibility = "visible";
+    setTime();
+    // questions.length = 0;
+    // gameOver();
+})
+
+
 var questions = [
     {
     question: 'What is an event listener in JS?',
@@ -149,13 +179,51 @@ function ranQuestion() {
 }
 
 function gameOver() {
-    if (questions.length == 0) {
+    if (questions.length == 0 || secondsLeft == 0) {
         counter.textContent = score;
-        alert("Quiz complete! Your score is " + score);
+        // alert("Quiz complete! Your score is " + score);
+        var newDiv = document.createElement("div");
+        var newH1 = document.createElement("h1");
+        var newP = document.createElement("p");
+        var newP2 = document.createElement("p");
+        var newInput = document.createElement("input");
+        var endButton = document.createElement("button");
+        var endTime = timer.textContent;
+        var zeroTime = document.createElement("h3");
+        zeroTime.textContent = 0;
+        zeroTime.classList.add("time");
+        outterTimer.removeChild(timer);
+        outterTimer.appendChild(zeroTime);
+        endButton.classList.add("btn");
+        endButton.classList.add("end");
+        endButton.textContent = "Submit"
+        newP2.classList.add("inputText")
+        newInput.classList.add("input")
+        newP.textContent = "Your final score is " + endTime;
+        newP2.textContent = "Enter initials: "
+        newH1.textContent = "All done!";
+        newDiv.append(newH1);
+        newDiv.append(newP);
+        newDiv.append(newP2);
+        newDiv.append(newInput);
+        newDiv.append(endButton);
+        container.removeChild(questionSection);
+        container.prepend(newDiv);
+        // introSection.style.visibility = "visible";
+        questionSection.style.visibility = "hidden";
     }
 }
 
+function reduceTime() {
+    if(secondsLeft > 10){
+        secondsLeft = secondsLeft - 10;
+    }
+    else {
+        secondsLeft = 0;
+        gameOver();
 
+    }
+}
 
 
 button1.addEventListener("click", function() {
@@ -182,6 +250,7 @@ button1.addEventListener("click", function() {
         displayAnswer.appendChild(node);
         displayAnswer.classList.add("rightOrwrong1");
         rightOrwrong.append(displayAnswer);
+        reduceTime();
         ranQuestion();
         gameOver();
     }
@@ -209,6 +278,7 @@ button2.addEventListener("click", function() {
         displayAnswer.appendChild(node);
         displayAnswer.classList.add("rightOrwrong1");
         rightOrwrong.append(displayAnswer);
+        reduceTime();
         ranQuestion();
         gameOver();
     }
@@ -236,6 +306,7 @@ button3.addEventListener("click", function() {
         displayAnswer.appendChild(node);
         displayAnswer.classList.add("rightOrwrong1");
         rightOrwrong.append(displayAnswer);
+        reduceTime();
         ranQuestion();
         gameOver();
     }
@@ -263,6 +334,7 @@ button4.addEventListener("click", function() {
         displayAnswer.appendChild(node);
         displayAnswer.classList.add("rightOrwrong1");
         rightOrwrong.append(displayAnswer);
+        reduceTime();
         ranQuestion();
         gameOver();
     }
@@ -303,6 +375,7 @@ button1.addEventListener("click", function() {
         displayAnswer.appendChild(node);
         displayAnswer.classList.add("rightOrwrong1");
         rightOrwrong.append(displayAnswer);
+        reduceTime();
         ranQuestion();
     }
 })
@@ -328,6 +401,7 @@ button2.addEventListener("click", function() {
         displayAnswer.appendChild(node);
         displayAnswer.classList.add("rightOrwrong1");
         rightOrwrong.append(displayAnswer);
+        reduceTime();
         ranQuestion();
     }
 })
@@ -353,6 +427,7 @@ button3.addEventListener("click", function() {
         displayAnswer.appendChild(node);
         displayAnswer.classList.add("rightOrwrong1");
         rightOrwrong.append(displayAnswer);
+        reduceTime();
         ranQuestion();
     }
 })
@@ -378,6 +453,7 @@ button4.addEventListener("click", function() {
         displayAnswer.appendChild(node);
         displayAnswer.classList.add("rightOrwrong1");
         rightOrwrong.append(displayAnswer);
+        reduceTime();
         ranQuestion();
     }
 })
