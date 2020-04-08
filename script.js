@@ -263,6 +263,7 @@ function gameOver() {
             Name: newName,
             Score: newScore,
         }
+        console.log(newHighscore);
         savedScores.push(newHighscore);
         console.log(savedScores);
         localStorage.setItem('scores', JSON.stringify(savedScores));
