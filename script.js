@@ -129,7 +129,7 @@ var questions = [
     question: 'How do you create a function in JavaScript?',
     answers: [
         {text: '1. function.Create = myFunction()', correct: false},
-        {text: '2. function = myFunction()', correct: true},
+        {text: '2. function myFunction(){}', correct: true},
         {text: '3. function: myFunction()', correct: false},
         {text: '4. New.function = myFunction()', correct: false}
         ]
