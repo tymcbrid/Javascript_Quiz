@@ -17,7 +17,10 @@ var allScores = document.getElementById("allscores");
 // var savedNames = [];
 var savedScores = [];
 var arrayRaw = localStorage.getItem("scores")
-var savedScores = JSON.parse(arrayRaw)
+if (arrayRaw !== null) {
+    var savedScores = JSON.parse(arrayRaw)
+}
+
 
 console.log(savedScores);
 
